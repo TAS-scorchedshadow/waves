@@ -24,7 +24,7 @@ const TideProfile: React.FC<TTideProfile> = (props) => {
     <div onClick={() => divClicked(person)} 
       className={added ? "cursor-pointer bg-slate-700 flex flex-row text-white rounded-xl p-5 m-5" : "cursor-pointer bg-navbar flex flex-row text-white rounded-xl p-5 m-5"}>
       <img 
-        src="../../../public/anya.jpeg"
+        src={person.profile}
         alt="user profile picture"
         className="h-10 w-10 rounded-full cursor-pointer object-cover mx-3"
       />
@@ -32,7 +32,7 @@ const TideProfile: React.FC<TTideProfile> = (props) => {
         <p className="font-semibold">{person.name}</p>
         <p>{person.email}</p>
       </div>
-      <button className="px-3">
+      <button className="ml-auto pl-3">
         {added ? <MinusIcon/> : <PlusIcon />}
       </button>
     </div>

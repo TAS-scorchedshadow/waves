@@ -9,6 +9,7 @@ const ProfileDropdown: React.FC<{
   userName: string,
   userEmail: string
   userStatus: string, handleStatusChange: any,
+  userProfile: string
   handleToggleDark: any, 
   dropdown: boolean, setDropdown: any
 }> = (props) => {
@@ -43,7 +44,7 @@ const ProfileDropdown: React.FC<{
           {/* User name, email & profile */}
           <Link to="/settings"><div className="flex flex-row flex-wrap items-center px-1 py-2 cursor-pointer">
             <img 
-              src="../../../public/anya.jpeg"
+              src={props.userProfile}
               className="h-10 w-10 rounded-full object-cover m-3"
             ></img>
             <div className="flex flex-col pr-3">

@@ -17,13 +17,13 @@ const TideSearch: React.FC<{searchQuery: string}> = ({ searchQuery }) => {
     if (retrieveEndpoint.isSuccess) {
       console.log(retrieveEndpoint.data)
       setRes(retrieveEndpoint.data.map(d => {
-        return {uId: d.id, email: d.email, name: d.name} as TInvited
+        return {uId: d.id, email: d.email, name: d.name, profile: d.profileImg} as TInvited
       }))
     }
   }, [retrieveEndpoint.isFetched])
 
   return (
-    <div className="flex flex-row flex-wrap">
+    <div className="grid grid-cols-2">
       {
         res.length === 0 ? 
           <div>No matches exist.</div> :

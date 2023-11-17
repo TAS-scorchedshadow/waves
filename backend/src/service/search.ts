@@ -37,7 +37,8 @@ const searchWaves = trpc.procedure.input(
       email: item.email,
       aboutMe: item.aboutMe,
       following: item.friends.includes(userId),
-      yourself: (item.id === userId)
+      yourself: (item.id === userId),
+      profile: item.profileImg
     }
   })
 
@@ -74,7 +75,8 @@ const searchFriends = protectedProcedure.query(async ({ ctx }) => {
     select: {
       id: true,
       name: true,
-      email: true
+      email: true,
+      profileImg: true,
     }
   }).catch(() => {
     throw new TRPCError({

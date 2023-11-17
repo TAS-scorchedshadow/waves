@@ -19,7 +19,7 @@ const InvitedList: React.FC<{
   return (
     <div className="bg-gray-200 rounded-3xl p-7 mt-7 text-black h-full">
       <h2 className="font-semibold text-xl">Invited Members</h2>
-      <div className="w-[130%] flex flex-row flex-wrap">
+      <div className="grid grid-cols-2">
         {list}
       </div>
     </div>

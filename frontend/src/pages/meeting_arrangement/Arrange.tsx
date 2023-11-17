@@ -27,7 +27,8 @@ type TController = {
 type TInvited = {
   uId: string,
   name: string,
-  email: string
+  email: string,
+  profile: string
 }
 
 type TInviteController = {

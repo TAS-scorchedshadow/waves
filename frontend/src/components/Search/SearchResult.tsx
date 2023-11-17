@@ -6,6 +6,7 @@ const SearchResult: React.FC<{
   email: string,
   aboutMe: string,
   following: boolean,
+  profileImg: string,
   yourself: boolean
 }> = (props) => {
 
@@ -38,7 +39,7 @@ const SearchResult: React.FC<{
     <div className="m-auto">
       <div className="flex flex-row items-center justify-evenly">
         <img 
-          src="../../../public/anya.jpeg"
+          src={props.profileImg}
           className="h-24 w-24 rounded-full object-cover my-2 mx-10"
         ></img>
         <div className="flex flex-col w-80">

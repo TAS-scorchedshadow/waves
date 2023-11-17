@@ -16,7 +16,7 @@ const DashBoardInfoCard: React.FC = () => {
       <div
         className="bg-white rounded-3xl shadow-lg flex flex-col items-center text-black w-[354px] h-[469px]"
       >
-        <img className="w-40 h-40 rounded-full mt-[15px]"
+        <img className="w-40 h-40 rounded-full mt-[15px] object-cover"
         src={getUserProfileAPI.data?.profileImg}
         alt="Rounded avatar" />
         <p

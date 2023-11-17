@@ -15,6 +15,7 @@ const Navbar: React.FC<{
   const [userStatus, setUserStatus] = useState("");
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [userProfile, setUserProfile] = useState("");
   const [dataFetched, setDataFetched] = useState(false);
   const [searchFocus, setSearchFocus] = useState(false)
 
@@ -45,6 +46,7 @@ const Navbar: React.FC<{
       setUserStatus(retrieveEndpoint.data.status);
       setUserName(retrieveEndpoint.data.name);
       setUserEmail(retrieveEndpoint.data.email);
+      setUserProfile(retrieveEndpoint.data.profileImg)
     }
   }, [retrieveEndpoint.isSuccess, dataFetched])
 
@@ -118,7 +120,7 @@ const Navbar: React.FC<{
             }
           >
             <img 
-              src="../../../public/anya.jpeg"
+              src={userProfile}
               alt="user profile picture"
               className="h-10 w-10 rounded-full cursor-pointer object-cover m-1"
             ></img>
@@ -141,6 +143,7 @@ const Navbar: React.FC<{
           && 
           <ProfileDropdown 
             userName={userName}
+            userProfile={userProfile}
             userEmail={userEmail}
             userStatus={userStatus}
             handleStatusChange={handleStatusChange}
